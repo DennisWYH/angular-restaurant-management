@@ -1,0 +1,22 @@
+
+
+<form [formGroup]="purchaseForm" (ngSubmit)="onSubmit()">
+<label>
+  品名:
+  <input type="text" [formControlName] = "name">
+</label>
+<label>
+  日期:
+  <input type="text" [formControlName] = "date">
+</label>
+<label>
+  价格:
+  <input type="text" [formControlName] = "price">
+</label>
+<label>
+  采购人:
+  <input type="text" [formControlName] = "person">
+</label>
+
+<button class="button" type="submit">Submit</button>
+</form>
