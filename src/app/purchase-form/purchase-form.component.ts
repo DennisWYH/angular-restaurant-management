@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {FormGroup} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-purchase-form',
@@ -9,13 +11,16 @@ import {FormGroup} from '@angular/forms';
 })
 
 export class PurchaseFormComponent implements OnInit {
-  
-  purchaseForm = new FormGroup({
+
+  purchaseRow = new FormGroup({
     name: new FormControl(''),
     date: new FormControl(''),
     price: new FormControl(''),
     person: new FormControl(''),
   });
+
+  purchaseForm = this.purchaseRow;
+
 
 
   constructor() { }
@@ -24,5 +29,11 @@ export class PurchaseFormComponent implements OnInit {
   }
   onSubmit(){
     console.warn('The form data has been submitted.');
+  }
+  addRow(){
+    // This method also updates the value and validity of the control.
+    // @param - name The control name to add to the collection
+    // @param - control Provides the control for the given name
+    this.purchaseForm.addControl(name,new FormControl(''));
   }
 }
