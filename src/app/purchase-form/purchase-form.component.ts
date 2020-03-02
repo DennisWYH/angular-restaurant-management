@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {FormGroup} from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { FormArray} from '@angular/forms';
 
 
 @Component({
@@ -19,10 +20,16 @@ export class PurchaseFormComponent implements OnInit {
     person: new FormControl(''),
   });
 
-  purchaseForm = this.purchaseRow;
 
-
-
+  // group = new FormGroup({
+  //   name: new FormControl(''),
+  //   date: new FormControl(''),
+  //   price: new FormControl(''),
+  //   person: new FormControl(''),
+  // });
+  
+  // private arrayOfGroups: FormArray
+  
   constructor() { }
 
   ngOnInit() {
